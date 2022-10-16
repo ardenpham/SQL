@@ -1,0 +1,38 @@
+
+
+--Create a book store database
+
+
+CREATE TABLE bookstore (id INTEGER Primary KEY, name TEXT, quantity INTEGER, aisle INTEGER, Price INTEGER);
+
+INSERT INTO bookstore VALUES 
+(1, "Nutritional Cooking", 5, 3, 62),
+(2, "Healthcare", 10, 7, 190),
+(3, "IT", 5, 2, 390),
+(4, "Business", 9, 10, 37),
+(5, "Dectective Skills", 19, 8, 23),
+(6, "Data Analyst", 14, 6, 55),
+(7, "People Analytics", 22, 15, 69),
+(8, "Garden", 34, 55, 17),
+(9, "House", 18, 55, 76),
+(10, "Decoration", 19, 15, 34)
+;
+
+--display the database ordered by price
+SELECT * FROM bookstore where Price> 55 ORDER BY Price desc;
+
+--what is the avg price of items? 
+SELECT AVG(price) "avg item price"
+FROM bookstore
+
+--what is the total number of items in the Price group? 
+SELECT Price, Sum(quantity) FROM bookstore Group by Price;
+
+
+
+
+
+
+
+
+
